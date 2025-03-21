@@ -50,3 +50,12 @@ point-cloud-registration/lar-3d-reconstruction/results/LAR2/pointcloud_120_150_R
 point-cloud-registration/lar-3d-reconstruction/results/LAR2/pointcloud_150_180_Monocolor.ply
 point-cloud-registration/lar-3d-reconstruction/results/LAR2/pointcloud_150_180_RGB.ply
 point-cloud-registration/lar-3d-reconstruction/results/LAR2/pointcloud_left_right_Monocolor.ply
+
+## pipeline-multiview-point-cloud-acquisition
+### code (an annoing file that is generated automatically when capture_point_clouds.py is executed)
+point-cloud-registration/pipeline-multiview-point-cloud-acquisition/code/Log
+### data (these point clouds are, actually, around 55MB)
+point-cloud-registration/pipeline-multiview-point-cloud-acquisition/data/test1/color_1_original.ply
+point-cloud-registration/pipeline-multiview-point-cloud-acquisition/data/test1/depth_1_original.ply
+point-cloud-registration/pipeline-multiview-point-cloud-acquisition/data/test1/color_2_original.ply
+point-cloud-registration/pipeline-multiview-point-cloud-acquisition/data/test1/depth_2_original.ply
