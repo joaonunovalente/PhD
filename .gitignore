@@ -54,7 +54,7 @@ point-cloud-registration/lar-3d-reconstruction/results/LAR2/pointcloud_left_righ
 ## pipeline-multiview-point-cloud-acquisition
 ### code (an annoing file that is generated automatically when capture_point_clouds.py is executed)
 point-cloud-registration/pipeline-multiview-point-cloud-acquisition/code/Log
-### data (these point clouds are, actually, around 55MB)
+### data/test1 (these point clouds are, actually, around 55MB)
 point-cloud-registration/pipeline-multiview-point-cloud-acquisition/data/test1/color_1_original.ply
 point-cloud-registration/pipeline-multiview-point-cloud-acquisition/data/test1/depth_1_original.ply
 point-cloud-registration/pipeline-multiview-point-cloud-acquisition/data/test1/color_2_original.ply
