@@ -1,5 +1,5 @@
-List of blogs:
-- [[1. Lorem ipsum dolor sit amet]]
+List of blog posts:
+- [[1. How Surface Angle Affects Laser Vibrometer Measurements]]
 
 
 
