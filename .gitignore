@@ -1,6 +1,6 @@
 /Blog/.obsidian
 # Code
-code/point-cloud-registration/pipeline-multiview-point-cloud-acquisition/code/.venv
-code/point-cloud-registration/pipeline-multiview-point-cloud-acquisition/exhaustive-grid-search/icp/__pycache__
-code/point-cloud-registration/pipeline-multiview-point-cloud-acquisition/exhaustive-grid-search/fft_conv_pytorch/__pycache__
-code/point-cloud-registration/pipeline-multiview-point-cloud-acquisition/exhaustive-grid-search/utils/__pycache__
+Code/point-cloud-registration/pipeline-multiview-point-cloud-acquisition/code/.venv
+Code/point-cloud-registration/pipeline-multiview-point-cloud-acquisition/exhaustive-grid-search/icp/__pycache__
+Code/point-cloud-registration/pipeline-multiview-point-cloud-acquisition/exhaustive-grid-search/fft_conv_pytorch/__pycache__
+Code/point-cloud-registration/pipeline-multiview-point-cloud-acquisition/exhaustive-grid-search/utils/__pycache__
