@@ -1,0 +1,51 @@
+FROM ubuntu:20.04
+
+# Set non-interactive frontend for debconf
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install necessary packages
+RUN apt-get update && \
+    apt-get install -y \
+    curl \
+    gnupg \
+    lsb-release \
+    && rm -rf /var/lib/apt/lists/*
+
+# Add the ROS repository
+RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+
+# Add the ROS key
+RUN curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | apt-key add -
+
+# Update package list and install ROS
+RUN apt-get update && \
+    apt-get install -y ros-noetic-desktop-full && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Environment setup
+RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+
+# Install additional ROS dependencies
+RUN apt-get update && \
+    apt-get install -y \
+    build-essential \
+    nano \
+    python3-pip \
+    python3-rosdep \
+    python3-rosinstall \
+    python3-rosinstall-generator \
+    python3-wstool \
+    sudo \
+    terminator && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install RealSense dependencies
+RUN pip install --upgrade pip && \
+    pip install \
+    opencv-python \
+    pyrealsense2
+
+# Initialize rosdep
+RUN rosdep init && rosdep update
