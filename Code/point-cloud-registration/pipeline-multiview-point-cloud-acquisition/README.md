@@ -4,7 +4,7 @@
 ``` bash
 sh docker_run.sh CODE_PATH DATA_PATH
 
-sh docker_run.sh /home/valente/Documents/vscode/PhD/code/point-cloud-registration/pipeline-multiview-point-cloud-acquisition/exhaustive-grid-search /home/valente/Documents/vscode/PhD/code/point-cloud-registration/pipeline-multiview-point-cloud-acquisition/data
+sh docker_run.sh /home/valente/Documents/vscode/PhD/Code/point-cloud-registration/pipeline-multiview-point-cloud-acquisition/exhaustive-grid-search /home/valente/Documents/vscode/PhD/Code/point-cloud-registration/pipeline-multiview-point-cloud-acquisition/data
 ```
 
 ## Enter docker container
@@ -16,8 +16,9 @@ cd exhaustive-grid-search/
 
 ## Pipeline
 ``` bash
+cd /home/valente/Documents/vscode/PhD/Code/point-cloud-registration/pipeline-multiview-point-cloud-acquisition/code/
+
 # Capture point clouds
-cd /home/valente/Documents/vscode/PhD/code/point-cloud-registration/pipeline-multiview-point-cloud-acquisition/code/
 ./capture_point_clouds.py
 
 # Register point clouds
