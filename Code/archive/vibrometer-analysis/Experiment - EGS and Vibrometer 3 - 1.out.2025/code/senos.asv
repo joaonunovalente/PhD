@@ -1,0 +1,44 @@
+close all; clear; clc;
+
+%% --- PARAMETERS ---
+dataFolder = "../data/";
+file = fullfile(dataFolder, "measurement_14.mat");
+
+%% --- STEP 1: Frequency ---
+accData = load(file);
+freq_inc_a = accData.accelerometer_z.FRF.x_values.increment;
+num_vals_a = accData.accelerometer_z.FRF.x_values.number_of_values;
+start_val_a = accData.accelerometer_z.FRF.x_values.start_value;
+freq_acc = transpose((start_val_a:num_vals_a-1) * freq_inc_a);
+
+%% --- STEP 2: Load Accelerometer measurements ---
+
+accel_x = abs(accData.accelerometer_x.Time.y_values.values);
+accel_y = abs(accData.accelerometer_y.Time.y_values.values);
+accel_z = abs(accData.accelerometer_z.Time.y_values.values);
+
+
+
+%% --- STEP 2: Load selected vibrometer measurement ---
+vibData = load(file);
+
+vib = vi / 5;
+
+
+% Convert velocity to acceleration
+omega = 2 * pi * freq_vib;
+accel_vib = zeros(size(vib));
+nz = (freq_vib ~= 0);
+accel_vib(nz) = 1i * omega(nz) .* vib(nz);
+accel_vib_mag = abs(accel_vib);
+
+%% --- STEP 3: Plot comparison ---
+figure;
+semilogy(freq_vib, accel_vib_mag, 'b', 'LineWidth', 1); hold on;
+semilogy(freq_acc, accel_FRF_mag, 'r', 'LineWidth', 1);
+xlabel('Frequency (Hz)');
+ylabel('Magnitude (m/s^2/N)');
+title(['Accelerometer vs. Vibrometer' ["Measurement " + file{1}(21)]]);
+legend('Vibrometer', 'Accelerometer', 'Location', 'best');
+grid on;
+set(gca, 'YScale', 'log');

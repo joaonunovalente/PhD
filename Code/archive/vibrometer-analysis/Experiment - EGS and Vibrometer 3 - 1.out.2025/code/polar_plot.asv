@@ -1,0 +1,39 @@
+clear; close all; clc
+
+% Example data: angles in degrees and distances in meters
+theta = [-60 -30 0 30 60]; % angles in degrees
+r = [2 2 5 2 2]; % distances in meters
+
+% Convert angles to radians
+theta_rad = deg2rad(theta);
+list = 1:5
+
+% Create polar plot with markers
+polarplot(theta_rad, r, 'bo', 'MarkerSize', 10, 'MarkerFaceColor', 'w', 'MarkerEdgeColor', 'b', list)
+hold on
+
+% Add labels inside the markers
+for i = 1:length(r)
+    % Convert polar coordinates to Cartesian for text placement
+    [x, y] = pol2cart(theta_rad(i), r(i));
+    disp([i, x, y])
+
+    % Adjusting label placement slightly away from the marker
+    text(x, y , num2str(i), ...
+        'HorizontalAlignment', 'center', ...
+        'VerticalAlignment', 'middle', ...
+        'FontWeight', 'bold', 'Color', 'b', 'FontSize', 10);
+end
+
+% Format polar plot
+title('Polar Plot: 0° at Top, Range -90° to 90° with Labels')
+ax = gca;
+ax.ThetaLim = [-180 180]; % Show from -90° to 90°
+ax.ThetaZeroLocation = 'top'; % 0° line points to the top
+ax.ThetaDir = 'clockwise'; % Angles go clockwise (left to right)
+ax.RLim = [0 max(r) + 0.5];
+
+% Add grid for better visualization
+ax.ThetaGrid = 'on';
+ax.RGrid = 'on';
+hold off
