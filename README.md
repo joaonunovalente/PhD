@@ -4,4 +4,4 @@ This repository contains all materials related to my doctoral research, includin
 
 ## Contact:
 
-Get in touch via [PhD.JoaoNunoValente.com/contact](https://phd.joaonunovalente.com/contact).
+Get in touch via [PhD Website](https://phd.joaonunovalente.com/contact).
